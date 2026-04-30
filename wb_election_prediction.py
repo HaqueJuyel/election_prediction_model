@@ -447,11 +447,44 @@ print("File : west_bengal_294_seat_prediction.csv")
 print("\n===================================")
 print("MODEL COMPLETED SUCCESSFULLY")
 # Save trained model
+# ==========================================================
+# MODEL INFORMATION
+# ==========================================================
+
+model_data = {
+
+    "developer":
+    "Mohammed Juyel Haque",
+
+    "model_name":
+    "West Bengal 294 Seat Advanced Election ML Model",
+
+    "algorithm":
+    "RandomForestClassifier",
+
+    "total_constituencies":
+    TOTAL_SEATS,
+
+    "features":
+    list(X.columns),
+
+    "trained_model":
+    model
+}
+
+# ==========================================================
+# SAVE MODEL
+# ==========================================================
+
 joblib.dump(
-    model,
+    model_data,
     "west_bengal_election_model.pkl"
 )
 
 print("Model saved successfully")
+
+print(
+    "Developer : Mohammed Juyel Haque"
+)
 
 print("===================================")
